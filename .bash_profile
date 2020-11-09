@@ -52,6 +52,8 @@ alias k='kubectl'
 alias k8s='k'
 alias kns='kubens'
 alias kx='kubectx'
+alias kdesc='k describe'
+alias kdes='k describe'
 # ------------------------------
 
 # ------------------------------
@@ -72,7 +74,6 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 source ~/.bashrc
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-export PATH="/usr/local/opt/node@10/bin:$PATH"
 
 # >>> talisman >>>
 # Below environment variables should not be modified unless you know what you are doing
@@ -83,3 +84,15 @@ alias talisman=$TALISMAN_HOME/talisman_darwin_amd64
 # ------------------------------------------------------- #
 # Please organise the below to their appropriate sections #
 # ------------------------------------------------------- #
+alias jest='./node_modules/.bin/jest'
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH=$PATH:/Users/sgjunwei.ng/bin
+
+[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
+if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+   export GPG_AGENT_INFO
+else
+   eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
+fi
