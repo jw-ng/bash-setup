@@ -30,6 +30,7 @@ brew install pinentry-mac
 ## Standard dev tools
 ################################################################################
 brew install pipenv
+brew install pyenv
 brew install tfenv
 
 brew cask install chef/chef/inspec
@@ -53,3 +54,10 @@ brew tap liamg/tfsec
 brew install liamg/tfsec/tfsec
 
 brew install azure-cli
+
+brew install hive
+brew install kafkacat
+brew install parquet-tools
+brew install scala
+brew install apache-spark
+brew install spark
