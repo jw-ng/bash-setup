@@ -95,7 +95,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose zsh-autosuggestions)
+plugins=(git docker docker-compose zsh-autosuggestions autoupdate)
 
 fpath=(~/.zsh/completion $fpath)
 
@@ -255,6 +255,17 @@ alias jedit='vim ~/Library/autojump/autojump.txt'
 alias clair-scan='~/Downloads/clair-scanner_darwin_amd64 --ip $(ipconfig getifaddr en0)'
 
 alias arec='asciinema rec ~/asciinema/$(date +%Y-%m-%d_%H%M%S).cast'
+
+ggpf () {
+        if [[ "$#" != 0 ]] && [[ "$#" != 1 ]]
+        then
+                git push origin "${*}" --force-with-lease
+        else
+                [[ "$#" == 0 ]] && local b="$(git_current_branch)"
+                git push origin "${b:=$1}" --force-with-lease
+        fi
+}
+
 # ------------------------------
 
 TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
@@ -265,7 +276,11 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'page faults from disk:     %F'$'\n'\
 'other page faults:         %R'
 
+bindkey \^U backward-kill-line
+
 export PIPENV_VENV_IN_PROJECT=1
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt

@@ -338,6 +338,8 @@ set -g status-position top
 
 bind C-q setw synchronize-panes
 
+bind s choose-tree -sZ -O name
+
 # -- custom variables ----------------------------------------------------------
 # to define a custom #{foo} variable, define a POSIX shell function between the
 # '# EOF' and the '# "$@"' lines. Please note that the opening brace { character
