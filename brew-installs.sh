@@ -11,7 +11,7 @@ brew install elinks
 
 ## Utility tools
 brew install reattach-to-user-namespace
-brew cask install jumpcut
+brew install --cask jumpcut
 
 brew install git
 brew install pre-commit
@@ -33,15 +33,15 @@ brew install pipenv
 brew install pyenv
 brew install tfenv
 
-brew cask install chef/chef/inspec
+brew install --cask chef/chef/inspec
 
 brew install k6
 
 brew install sbt
 brew tap AdoptOpenJDK/openjdk
-brew cask install adoptopenjdk12
-brew cask install adoptopenjdk8
-brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+brew install --cask adoptopenjdk12
+brew install --cask adoptopenjdk8
+brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
 
 brew tap mongodb/brew
 brew install mongoexport
