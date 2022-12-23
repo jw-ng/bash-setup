@@ -25,12 +25,16 @@ brew install stunnel
 
 brew install gnupg2
 brew install pinentry-mac
+brew install autojump
 
 ################################################################################
 ## Standard dev tools
 ################################################################################
+brew install direnv
+
 brew install pipenv
 brew install pyenv
+brew install jenv
 brew install tfenv
 
 brew install --cask chef/chef/inspec
@@ -61,3 +65,11 @@ brew install parquet-tools
 brew install scala
 brew install apache-spark
 brew install spark
+
+brew install kubectl
+brew install kubectx
+
+brew install fzf
+
+# To isntall useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
